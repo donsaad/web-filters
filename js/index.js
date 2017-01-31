@@ -44,5 +44,8 @@ function filter3() {
   alert("filter 3");
 }
 function reset() {
-  alert("reset btn");
+  if ( imageIsLoaded(imgOriginal) ) {
+    imgOriginal.drawTo(canvas);
+  }
+  else alert("Image is not loaded");
 }
