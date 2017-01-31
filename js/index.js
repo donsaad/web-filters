@@ -14,9 +14,29 @@ function loadImage() {
   canvas = document.getElementById("can");
   imgOriginal.drawTo(canvas);
 }
-function filter1() {
-  alert("filter 1");
+
+function doGray() {
+   if ( imageIsLoaded(imgGray) ) { 
+    filterGray();
+    imgGray.drawTo(canvas);
+  }
 }
+function imageIsLoaded(img) {
+  if(img == null || !img.complete())
+    return false;
+  else return true;
+}
+function filterGray() {
+  for(var px of imgGray.values()) {
+        var avg = ( px.getRed() 
+                   + px.getGreen() 
+                   + px.getBlue() ) / 3;
+        px.setRed(avg);
+        px.setGreen(avg);
+        px.setBlue(avg);
+    }
+}
+
 function filter2() {
   alert("filter 2");
 }
