@@ -1,0 +1,17 @@
+h2 {
+  color:DarkSlateBlue;
+}
+canvas {
+  width:200pt;
+  height:150pt;
+  border:2px solid teal;
+}
+.btns {
+  padding:5pt;
+  font-family:exo;
+  font-size:12pt;
+  background:Gainsboro;
+}
+html {
+  font-family:exo;
+}
