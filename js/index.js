@@ -20,6 +20,7 @@ function doGray() {
     filterGray();
     imgGray.drawTo(canvas);
   }
+  else alert("Image is not loaded");
 }
 function imageIsLoaded(img) {
   if(img == null || !img.complete())
@@ -37,8 +38,29 @@ function filterGray() {
     }
 }
 
-function filter2() {
-  alert("filter 2");
+function doRed() {
+    if ( imageIsLoaded(imgRed) ) {
+        filterRed();
+        imgRed.drawTo(canvas);
+    }
+    else alert("Image is not loaded");
+}
+function filterRed() {
+    for(var px of imgRed.values()) {
+        var avg = ( px.getRed()
+            + px.getGreen()
+            + px.getBlue() ) / 3;
+        if(avg < 128) {
+            px.setRed(2*avg);
+            px.setGreen(0);
+            px.setBlue(0);
+        }
+        else {
+            px.setRed(255);
+            px.setGreen((2*avg) - 255);
+            px.setBlue((2*avg) - 255);
+        }
+    }
 }
 function filter3() {
   alert("filter 3");
