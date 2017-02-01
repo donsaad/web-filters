@@ -2,8 +2,8 @@ h2 {
   color:DarkSlateBlue;
 }
 canvas {
-  width:200pt;
-  height:150pt;
+  width:250pt;
+  height:200pt;
   border:2px solid teal;
 }
 .btns {
@@ -14,4 +14,5 @@ canvas {
 }
 html {
   font-family:exo;
+  text-align: center;
 }
